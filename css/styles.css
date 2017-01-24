@@ -38,3 +38,9 @@ img {
 .jumbotron {
   padding-left: 5%;
 }
+
+.linkhover:hover{
+  color: blue;
+  text-decoration: underline;
+  cursor: pointer;
+}

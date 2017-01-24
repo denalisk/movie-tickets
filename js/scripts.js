@@ -89,6 +89,7 @@ $(function(){
         $(".checkout").removeClass("col-lg-3 fixed");
         $(".finalize-order").show();
         $(".reload").show();
+        $(this).removeClass("linkhover");
       });
 
       $(".reload").click(function(){
