@@ -61,7 +61,7 @@ $(function(){
     event.preventDefault();
 
     })
-  $("button").click(function(){
+  $("button.orderticket").click(function(){
     var selectedMovie = $(this).val();
     var movieTime = parseFloat($(this).parent().parent().find("#movietime").val());
     var movieQuantity = parseFloat($(this).parent().parent().find("#moviesum").val());
@@ -78,9 +78,16 @@ $(function(){
       $(".output").append(newTicket.output);
       $(this).parent().parent().find("#movietime").val(0);
       $(this).parent().parent().find("#moviesum").val(0);
+      $(".checkout").show();
 
       $(".ticket-span").off().click(function(){
         $(this).parent().remove();
+      });
+
+      $("#placeorder").click(function(){
+        $(".moviesrow").hide();
+        $(".checkout").removeClass("col-sm-3");
+        $(".finalize-order").show();
       });
     };
   });

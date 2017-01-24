@@ -1,0 +1,11 @@
+.checkout, .orderconfirm, .finalize-order {
+  display: none;
+}
+
+.moviebox {
+  min-height: 20em;
+}
+
+.moviebox h3 {
+  height: 3.5em;
+}
