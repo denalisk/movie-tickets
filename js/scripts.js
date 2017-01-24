@@ -31,7 +31,7 @@ Ticket.prototype.pricemodifier = function(time, quantity) {
   var price = 7;
 
   if (time > 1600) {
-    price += price * 1.2;
+    price += price * 0.2;
   } else if (time < 1600) {
     price -= price * 0.2;
   };
