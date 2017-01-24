@@ -1,18 +1,29 @@
 var movieArray = [];
 
-var Movie = function(movieName, newReleaseStatus, time) {
+var Movie = function(movieName, newReleaseStatus, id) {
   this.movieName = movieName;
   this.newReleaseStatus = newReleaseStatus;
   this.movieTimes = [];
-  this.price = 7;
-  this.selectTime = time;
+  this.nickname = id;
 };
 
-var Ticket = function(quantity, time, movie) {
+var Ticket = function(time, quantity, movie) {
+  this.time = time;
+  this.quantity = quantity;
+  this.movie = movie;
+};
 
-}
+var adventures = new Movie("The Adventures of Epiherodus", true, "adventures");
+movieArray.push(adventures);
+var brightLights = new Movie("Bright Lights, Tech City", false,"brightLights");
+movieArray.push(brightLights);
+var starWars = new Movie("Star Wars: The Prequel Prequel (The Lost Lucas)", true,"starWars");
+movieArray.push(starWars);
+var stooges = new Movie("The Fourth Stooge: This Time with Pink Panther", false,"stooges");
+movieArray.push(stooges);
 
-Movie.prototype.pricemodifier = function(time, quantity) {
+
+Ticket.prototype.pricemodifier = function(time, quantity) {
   var price = 7;
 
   if (time > 1600) {
@@ -20,7 +31,7 @@ Movie.prototype.pricemodifier = function(time, quantity) {
   } else if (time < 1600) {
     price -= price * 0.2;
   };
-  if (this.newReleaseStatus === true) {
+  if (this.movie.newReleaseStatus === true) {
     price += 3;
   };
   var total = price * quantity;
@@ -29,40 +40,22 @@ Movie.prototype.pricemodifier = function(time, quantity) {
 
 
 
-
 $(function(){
   $("#movies").submit(function(event){
     event.preventDefault();
 
-      });
-// Movie 1
-  $("#movie1submit").click(function(event){
-    var name = "The Adventures of Epiherodus";
+    })
+  $("button").click(function(){
+    var selectedMovie = $(this).val();
     var newReleaseStatus = true;
-    var movie1Time = parseFloat($("#movie1").val());
-    var movie1Quantity = parseFloat($("#movie1sum").val());
+    var movieTime = parseFloat($(this).prev().find("#movietime").val());
+    var movieQuantity = parseFloat($(this).prev().find("#moviesum").val());
+    var newMovie = new Ticket(movieTime, movieQuantity, movieArray[selectedMovie]);
 
-    var ticket1 = new Ticket(movie1Time, movie1Quantity, name);
-    var movie1 = new Movie(name, newReleaseStatus, movie1Time);
+    $(".output").append(newMovie.movie.movieName + " " + " at "+ newMovie.time + " for $" + newMovie.pricemodifier(newMovie.time, newMovie.quantity) +"<br>");
 
-    $(".output").append(movie1.movieName + " " + " at "+ movie1.selectTime + " for $" + movie1.pricemodifier(movie1Time, movie1Quantity) +"<br>");
-
-    $("#movie1").val(0)
-    $("#movie1sum").val(0)
+    $(this).prev().find("#movietime").val(0);
+    $(this).prev().find("#moviesum").val(0);
   })
-// Movie 2
-  $("#movie2submit").click(function(event){
-    var name = "Bright Lights, Tech City";
-    var newReleaseStatus = false;
-    var movie2Time = parseFloat($("#movie2").val());
-    var movie2Quantity = parseFloat($("#movie2sum").val());
 
-    var ticket1 = new Ticket(movie2Time, movie2Quantity, name);
-    var movie2 = new Movie(name, newReleaseStatus, movie2Time);
-
-    $(".output").append(movie2.movieName + " " + " at "+ movie2.selectTime + " for $" + movie2.pricemodifier(movie2Time, movie2Quantity) +"<br>");
-
-    $("#movie2").val(0)
-    $("#movie2sum").val(0)
-  })
 });
