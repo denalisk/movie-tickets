@@ -17,10 +17,12 @@
         <div class="col-sm-3">
           <form id="movies">
           <h2>Movies</h2>
+          <!--Movie 1-->
           <div class="movie1">
-            <h3>Movie 1</h3>
+            <h3>The Adventures of Epiherodus</h3>
             <div class="col-sm-6">
               <select class="form-control" id="movie1">
+                <option value=0>---</option>
                 <option value=900>9:00am</option>
                 <option value=1030>10:30am</option>
                 <option value=1130>11:30am</option>
@@ -32,7 +34,7 @@
             </div>
             <div class="col-sm-6">
               <select class="form-control" id="movie1sum">
-                <option>0</option>
+                <option value=0>---</option>
                 <option>1</option>
                 <option>2</option>
                 <option>3</option>
@@ -46,7 +48,41 @@
               </select>
             </div>
           </div>
-          <button class="btn btn-primary" type="submit">Add to cart</button>
+          <button class="btn btn-primary" type="submit" id="movie1submit">Add to cart</button>
+          <!--Movie 2-->
+          <div class="movie2">
+            <h3>Bright Lights, Tech City</h3>
+            <div class="col-sm-6">
+              <select class="form-control" id="movie2">
+                <option value=0>---</option>
+                <option value=900>9:00am</option>
+                <option value=1030>10:30am</option>
+                <option value=1130>11:30am</option>
+                <option value=1400>2:00pm</option>
+                <option value=1600>4:00pm</option>
+                <option value=1800>6:00pm</option>
+                <option value=2130>9:30pm</option>
+              </select>
+            </div>
+            <div class="col-sm-6">
+              <select class="form-control" id="movie2sum">
+                <option value=0>---</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+                <option>10</option>
+              </select>
+            </div>
+          </div>
+          <button class="btn btn-primary" type="submit" id="movie2submit">Add to cart</button>
+
+
           </form>
         </div>
         <div class="col-sm-3">
