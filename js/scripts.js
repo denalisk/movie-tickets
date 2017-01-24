@@ -38,6 +38,20 @@ Ticket.prototype.pricemodifier = function(time, quantity) {
   return total.toFixed(2);
 };
 
+Ticket.prototype.timeConverter = function(time) {
+  var ampm = "am";
+  var convertedTime = time;
+  if (time > 1159) {
+    ampm = "pm";
+  }
+  if (time > 1259) {
+    convertedTime -= 1200;
+  }
+  var splitTime = (convertedTime + ampm).split('');
+  splitTime.splice(splitTime.length-4, 0, ":");
+  return splitTime.join('');
+}
+
 
 
 $(function(){
@@ -48,14 +62,14 @@ $(function(){
   $("button").click(function(){
     var selectedMovie = $(this).val();
     var newReleaseStatus = true;
-    var movieTime = parseFloat($(this).prev().find("#movietime").val());
-    var movieQuantity = parseFloat($(this).prev().find("#moviesum").val());
+    var movieTime = parseFloat($(this).parent().parent().find("#movietime").val());
+    var movieQuantity = parseFloat($(this).parent().parent().find("#moviesum").val());
     var newMovie = new Ticket(movieTime, movieQuantity, movieArray[selectedMovie]);
 
-    $(".output").append(newMovie.movie.movieName + " " + " at "+ newMovie.time + " for $" + newMovie.pricemodifier(newMovie.time, newMovie.quantity) +"<br>");
+    $(".output").append("<strong>" + newMovie.movie.movieName + "</strong> " + " at "+ newMovie.timeConverter(newMovie.time) + " for $" + newMovie.pricemodifier(newMovie.time, newMovie.quantity) +"<br>");
 
-    $(this).prev().find("#movietime").val(0);
-    $(this).prev().find("#moviesum").val(0);
+    $(this).parent().parent().find("#movietime").val(0);
+    $(this).parent().parent().find("#moviesum").val(0);
   })
 
 });
