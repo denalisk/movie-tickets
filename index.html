@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css" media="screen" title="no title" charset="utf-8">
+    <script src="js/jquery-3.1.1.js" charset="utf-8"></script>
+    <script src="js/scripts.js" charset="utf-8"></script>
+    <title></title>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="jumbotron">
+        <h1>Movie Tickets</h1>
+      </div>
+      <div class="row">
+        <div class="col-sm-3">
+          <form id="movies">
+          <h2>Movies</h2>
+          <div class="movie1">
+            <h3>Movie 1</h3>
+            <div class="col-sm-6">
+              <select class="form-control" id="movie1">
+                <option>9:00am</option>
+                <option>10:30am</option>
+                <option>11:30am</option>
+                <option>2:00pm</option>
+                <option>4:00pm</option>
+                <option>6:00pm</option>
+                <option>9:30pm</option>
+              </select>
+            </div>
+            <div class="col-sm-6">
+              <select class="form-control" id="movie1sum">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+                <option>10</option>
+              </select>
+            </div>
+          </div>
+          <button class="btn btn-primary" type="submit">Add to cart</button>
+          </form>
+        </div>
+        <div class="col-sm-3">
+          <h2>Checkout</h2>
+          <p class="output"></p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
