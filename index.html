@@ -9,23 +9,23 @@
     <title></title>
   </head>
   <body>
+    <div class="jumbotron">
+      <h1>Movie Tickets</h1>
+    </div>
     <div class="container-fluid">
-      <div class="jumbotron">
-        <h1>Movie Tickets</h1>
-      </div>
       <div class="row">
-        <div class="col-sm-9">
+        <div class="col-lg-9">
 
           <form id="movies">
           <h2 class="moviesrow">Movies</h2>
           <!--Row 1-->
           <div class="row moviesrow">
             <!--Movie 1-->
-            <div class="moviebox col-sm-3">
+            <div class="moviebox col-lg-3">
               <h3>The Adventures of Epiherodus</h3>
-              <img src="#" alt="#">
+              <img src="imgs/cage1.jpg" alt="Nicholas Cage, the greatest actor of all time.">
               <div class="row">
-                <div class="col-sm-6">
+                <div class="col-lg-6">
                   <select class="form-control" id="movietime">
                     <option value=0>---</option>
                     <option value=900>9:00am</option>
@@ -33,11 +33,11 @@
                     <option value=1130>11:30am</option>
                     <option value=1400>2:00pm</option>
                     <option value=1600>4:00pm</option>
-                    <option value=1800>6:00pm</option>
+                    <option value=1830>6:30pm</option>
                     <option value=2130>9:30pm</option>
                   </select>
                 </div>
-                <div class="col-sm-6">
+                <div class="col-lg-6">
                   <select class="form-control" id="moviesum">
                     <option value=0>---</option>
                     <option>1</option>
@@ -53,15 +53,16 @@
                   </select>
                   <button class="btn orderticket btn-primary" type="button" value="0">Add to cart</button>
                 </div>
+                <p>Showtimes: 9:00am 10:30am 11:30am 2:00pm 4:00pm 6:30pm 9:30pm</p>
               </div>
             </div>
 
             <!--Movie 2-->
-            <div class="moviebox col-sm-3">
+            <div class="moviebox col-lg-3">
               <h3>Bright Lights, Tech City</h3>
-              <img src="#" alt="#">
+              <img src="imgs/cage2.jpg" alt="Nicholas Cage, the greatest actor of all time.">
               <div class="row">
-                <div class="col-sm-6">
+                <div class="col-lg-6">
                   <select class="form-control" id="movietime">
                     <option value=0>---</option>
                     <option value=900>9:00am</option>
@@ -73,7 +74,7 @@
                     <option value=2130>9:30pm</option>
                   </select>
                 </div>
-                <div class="col-sm-6">
+                <div class="col-lg-6">
                   <select class="form-control" id="moviesum">
                     <option value=0>---</option>
                     <option>1</option>
@@ -89,16 +90,17 @@
                   </select>
                   <button class="btn orderticket btn-primary" type="button" value="1">Add to cart</button>
                 </div>
+                <p>Showtimes: 9:00am 10:30am 11:30am 2:00pm 4:00pm 6:00pm 9:30pm</p>
               </div>
             </div>
 
 
             <!--Movie 3-->
-            <div class="moviebox col-sm-3">
+            <div class="moviebox col-lg-3">
               <h3>Star Wars: The Prequel Prequel (The Lost Lucas)</h3>
-              <img src="#" alt="#">
+              <img src="imgs/cage3.jpg" alt="Nicholas Cage, the greatest actor of all time.">
               <div class="row">
-                <div class="col-sm-6">
+                <div class="col-lg-6">
                   <select class="form-control" id="movietime">
                     <option value=0>---</option>
                     <option value=900>9:00am</option>
@@ -110,7 +112,7 @@
                     <option value=2130>9:30pm</option>
                   </select>
                 </div>
-                <div class="col-sm-6">
+                <div class="col-lg-6">
                   <select class="form-control" id="moviesum">
                     <option value=0>---</option>
                     <option>1</option>
@@ -126,17 +128,18 @@
                   </select>
                   <button class="btn orderticket btn-primary" type="button" value="2">Add to cart</button>
                 </div>
+                <p>Showtimes: 9:00am 10:30am 11:30am 2:00pm 4:00pm 6:00pm 9:30pm</p>
               </div>
             </div>
           </div>
 
           <!--Second Row-->
           <div class="row moviesrow">
-            <div class="col-sm-3 moviebox">
+            <div class="col-lg-3 moviebox">
               <h3>The Fourth Stooge: This Time with Pink Panther</h3>
-              <img src="#" alt="#">
+              <img src="imgs/cage4.jpg" alt="Nicholas Cage, the greatest actor of all time.">
               <div class="row">
-                <div class="col-sm-6">
+                <div class="col-lg-6">
                   <select class="form-control" id="movietime">
                     <option value=0>---</option>
                     <option value=900>9:00am</option>
@@ -148,7 +151,7 @@
                     <option value=2130>9:30pm</option>
                   </select>
                 </div>
-                <div class="col-sm-6">
+                <div class="col-lg-6">
                   <select class="form-control" id="moviesum">
                     <option value=0>---</option>
                     <option>1</option>
@@ -164,22 +167,26 @@
                   </select>
                   <button class="btn orderticket btn-primary" type="button" value="3">Add to cart</button>
                 </div>
+                <p>Showtimes: 9:00am 10:30am 11:30am 2:00pm 4:00pm 6:00pm 9:30pm</p>
               </div>
             </div>
-            <div class="col-sm-3">
+            <div class="col-lg-3">
               <!--Placeholder Div-->
             </div>
-            <div class="col-sm-3">
+            <div class="col-lg-3">
               <!--Placeholder Div-->
             </div>
           </div>
         </form>
         </div>
-        <div class="col-sm-3 checkout">
+        <div class="col-lg-3 checkout fixed well">
           <h2 id="placeorder">Checkout</h2>
           <p class="output"></p>
           <button class="finalize-order">Place Order</button>
+          <button class="reload">Place New Order</button>
         </div>
+        <div class="ordercomplete">
+          <h1>Thank you for your order! :D</h1>
       </div>
     </div>
   </body>

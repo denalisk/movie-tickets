@@ -1,11 +1,40 @@
-.checkout, .orderconfirm, .finalize-order {
+.checkout, .orderconfirm, .finalize-order, .reload, .ordercomplete {
   display: none;
 }
 
 .moviebox {
   min-height: 20em;
+  padding: 5%;
+}
+
+.container-fluid {
+  padding-left: 5%;
+}
+
+.moviebox:hover {
+  background-color: #e0e0e0;
 }
 
 .moviebox h3 {
-  height: 3.5em;
+  height: 4em;
+}
+
+img {
+  max-height: 90%;
+  max-width: 90%;
+  margin-bottom: 3%;
+}
+
+.btn {
+  margin-top: 4%;
+}
+
+.fixed {
+  position: fixed;
+  top: 100px;
+  right: 0px;
+}
+
+.jumbotron {
+  padding-left: 5%;
 }

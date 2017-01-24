@@ -86,9 +86,19 @@ $(function(){
 
       $("#placeorder").click(function(){
         $(".moviesrow").hide();
-        $(".checkout").removeClass("col-sm-3");
+        $(".checkout").removeClass("col-lg-3 fixed");
         $(".finalize-order").show();
+        $(".reload").show();
       });
+
+      $(".reload").click(function(){
+        location.reload();
+      })
+      $(".finalize-order").click(function(){
+        $(".finalize-order").hide();
+        $(".checkout").hide();
+        $(".ordercomplete").show();
+      })
     };
   });
 
