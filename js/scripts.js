@@ -11,6 +11,10 @@ var Ticket = function(time, quantity, movie) {
   this.time = time;
   this.quantity = quantity;
   this.movie = movie;
+  this.output = "<div class='well'>" +
+                  "<strong>" + this.movie.movieName + "</strong> " + " at "+ this.timeConverter(this.time) + " for $" + this.pricemodifier(this.time, this.quantity) +"<br>" +
+                  "<button class='ticket-span btn-sm btn-success'>Delete</button>" +
+                "</div>";
 };
 
 var adventures = new Movie("The Adventures of Epiherodus", true, "adventures");
@@ -52,8 +56,6 @@ Ticket.prototype.timeConverter = function(time) {
   return splitTime.join('');
 }
 
-
-
 $(function(){
   $("#movies").submit(function(event){
     event.preventDefault();
@@ -61,15 +63,30 @@ $(function(){
     })
   $("button").click(function(){
     var selectedMovie = $(this).val();
-    var newReleaseStatus = true;
     var movieTime = parseFloat($(this).parent().parent().find("#movietime").val());
     var movieQuantity = parseFloat($(this).parent().parent().find("#moviesum").val());
-    var newMovie = new Ticket(movieTime, movieQuantity, movieArray[selectedMovie]);
 
-    $(".output").append("<strong>" + newMovie.movie.movieName + "</strong> " + " at "+ newMovie.timeConverter(newMovie.time) + " for $" + newMovie.pricemodifier(newMovie.time, newMovie.quantity) +"<br>");
 
-    $(this).parent().parent().find("#movietime").val(0);
-    $(this).parent().parent().find("#moviesum").val(0);
-  })
+    if (movieTime === 0) {
+      alert("Please select a time")
+    } else if (movieQuantity === 0) {
+      alert("Please select a quantity")
+    } else {
+
+      var newTicket = new Ticket(movieTime, movieQuantity, movieArray[selectedMovie]);
+
+      $(".output").append(newTicket.output);
+      $(this).parent().parent().find("#movietime").val(0);
+      $(this).parent().parent().find("#moviesum").val(0);
+
+      $(".ticket-span").off().click(function(){
+        $(this).parent().remove();
+      });
+    };
+  });
+
+
+
+
 
 });
